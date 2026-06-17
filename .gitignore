@@ -1,0 +1,4 @@
+.DS_Store
+.codex/state/
+*.log
+*.tmp
