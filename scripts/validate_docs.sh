@@ -17,7 +17,10 @@ required=(
   data/standards_coverage.json
   data/integration_adapters.json
   data/operational_readiness.json
+  reports/operational_readiness_latest.json
+  reports/operational_readiness_latest.md
   scripts/validate_operational_manifests.py
+  scripts/generate_readiness_report.py
   docs/blockchain/BLOCKCHAIN_ARCHITECTURE.md
   docs/blockchain/TOKENOMICS.md
   docs/blockchain/SMART_CONTRACT_MODEL.md

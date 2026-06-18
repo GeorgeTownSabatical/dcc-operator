@@ -26,6 +26,7 @@ The objective is not maximum utilization. The objective is to maximize coherent 
 - [schemas/integration_envelope.schema.json](schemas/integration_envelope.schema.json) defines the canonical adapter envelope.
 - [fixtures/integration_envelopes](fixtures/integration_envelopes) contains replayable contract fixtures for representative integrations.
 - [scripts/validate_operational_manifests.py](scripts/validate_operational_manifests.py) validates coverage, references, fixture envelopes, and readiness claims.
+- [reports/operational_readiness_latest.md](reports/operational_readiness_latest.md) is the generated readiness report; `make validate` fails if it drifts from the manifests and fixtures.
 
 ## Optional Extensions
 
@@ -39,3 +40,9 @@ make validate
 ```
 
 The validation suite checks root contracts, math references, blockchain optionality, QSO safety gates, and agent output requirements.
+
+Regenerate deterministic reports with:
+
+```bash
+make reports
+```

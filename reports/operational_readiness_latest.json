@@ -1,0 +1,507 @@
+{
+  "adapter_scores": {
+    "facility-bms": {
+      "control_authority": "observe",
+      "domains": [
+        "cooling",
+        "energy",
+        "facility",
+        "power"
+      ],
+      "fixtures": [
+        {
+          "control_authority": "observe",
+          "domain": "cooling",
+          "fixture": "fixtures/integration_envelopes/facility_bms.json",
+          "score": {
+            "EnterpriseScore": 90.476,
+            "Q": 0.904762,
+            "RiskAdjustedScore": 65.476
+          }
+        }
+      ],
+      "mean_risk_adjusted_score": 65.476,
+      "status_level": "L1"
+    },
+    "market-exchange": {
+      "control_authority": "simulate",
+      "domains": [
+        "disaster_recovery",
+        "finance",
+        "market",
+        "sustainability"
+      ],
+      "fixtures": [
+        {
+          "control_authority": "simulate",
+          "domain": "market",
+          "fixture": "fixtures/integration_envelopes/market_exchange.json",
+          "score": {
+            "EnterpriseScore": 86.667,
+            "Q": 0.866667,
+            "RiskAdjustedScore": 61.667
+          }
+        }
+      ],
+      "mean_risk_adjusted_score": 61.667,
+      "status_level": "L1"
+    },
+    "otel-core": {
+      "control_authority": "observe",
+      "domains": [
+        "ai_high_density",
+        "compute",
+        "network",
+        "security",
+        "storage"
+      ],
+      "fixtures": [
+        {
+          "control_authority": "observe",
+          "domain": "compute",
+          "fixture": "fixtures/integration_envelopes/otel_core.json",
+          "score": {
+            "EnterpriseScore": 164.286,
+            "Q": 1.642857,
+            "RiskAdjustedScore": 154.286
+          }
+        }
+      ],
+      "mean_risk_adjusted_score": 154.286,
+      "status_level": "L1"
+    },
+    "qso-readiness": {
+      "control_authority": "simulate",
+      "domains": [
+        "ai_high_density",
+        "disaster_recovery",
+        "qso"
+      ],
+      "fixtures": [
+        {
+          "control_authority": "simulate",
+          "domain": "qso",
+          "fixture": "fixtures/integration_envelopes/qso_readiness.json",
+          "score": {
+            "EnterpriseScore": 57.895,
+            "Q": 0.578947,
+            "RiskAdjustedScore": 17.895
+          }
+        }
+      ],
+      "mean_risk_adjusted_score": 17.895,
+      "status_level": "L1"
+    },
+    "redfish-hardware": {
+      "control_authority": "observe",
+      "domains": [
+        "compute",
+        "cooling",
+        "network",
+        "power",
+        "storage"
+      ],
+      "fixtures": [
+        {
+          "control_authority": "observe",
+          "domain": "power",
+          "fixture": "fixtures/integration_envelopes/redfish_hardware.json",
+          "score": {
+            "EnterpriseScore": 146.667,
+            "Q": 1.466667,
+            "RiskAdjustedScore": 131.667
+          }
+        }
+      ],
+      "mean_risk_adjusted_score": 131.667,
+      "status_level": "L1"
+    },
+    "sustainability-xue": {
+      "control_authority": "observe",
+      "domains": [
+        "energy",
+        "finance",
+        "sustainability"
+      ],
+      "fixtures": [
+        {
+          "control_authority": "observe",
+          "domain": "sustainability",
+          "fixture": "fixtures/integration_envelopes/sustainability_xue.json",
+          "score": {
+            "EnterpriseScore": 88.889,
+            "Q": 0.888889,
+            "RiskAdjustedScore": 68.889
+          }
+        }
+      ],
+      "mean_risk_adjusted_score": 68.889,
+      "status_level": "L1"
+    },
+    "terraform-plan": {
+      "control_authority": "simulate",
+      "domains": [
+        "compliance",
+        "compute",
+        "facility",
+        "network",
+        "security",
+        "storage"
+      ],
+      "fixtures": [
+        {
+          "control_authority": "simulate",
+          "domain": "compliance",
+          "fixture": "fixtures/integration_envelopes/terraform_plan.json",
+          "score": {
+            "EnterpriseScore": 116.667,
+            "Q": 1.166667,
+            "RiskAdjustedScore": 81.667
+          }
+        }
+      ],
+      "mean_risk_adjusted_score": 81.667,
+      "status_level": "L2"
+    }
+  },
+  "domain_readiness": {
+    "ai_high_density": {
+      "current_level": "L1",
+      "evidence_adapters": [
+        "otel-core",
+        "qso-readiness"
+      ],
+      "gaps": [
+        "GPU fabric telemetry",
+        "energy-per-token scorer",
+        "liquid-cooling coupling"
+      ],
+      "level_gap": 4,
+      "mean_evidence_score": 86.091,
+      "target_level": "L5"
+    },
+    "compliance": {
+      "current_level": "L1",
+      "evidence_adapters": [
+        "terraform-plan"
+      ],
+      "gaps": [
+        "auditor export",
+        "control mapping manifest",
+        "evidence retention policy"
+      ],
+      "level_gap": 3,
+      "mean_evidence_score": 81.667,
+      "target_level": "L4"
+    },
+    "compute": {
+      "current_level": "L1",
+      "evidence_adapters": [
+        "otel-core",
+        "redfish-hardware",
+        "terraform-plan"
+      ],
+      "gaps": [
+        "deployment gate fixture",
+        "live inventory connector",
+        "score computation fixture"
+      ],
+      "level_gap": 4,
+      "mean_evidence_score": 122.54,
+      "target_level": "L5"
+    },
+    "cooling": {
+      "current_level": "L1",
+      "evidence_adapters": [
+        "facility-bms",
+        "redfish-hardware"
+      ],
+      "gaps": [
+        "ASHRAE envelope fixture",
+        "liquid cooling model",
+        "thermal rollback model"
+      ],
+      "level_gap": 4,
+      "mean_evidence_score": 98.572,
+      "target_level": "L5"
+    },
+    "disaster_recovery": {
+      "current_level": "L1",
+      "evidence_adapters": [
+        "market-exchange",
+        "qso-readiness"
+      ],
+      "gaps": [
+        "failover rights model",
+        "geographic correlation risk",
+        "recovery exercise evidence"
+      ],
+      "level_gap": 4,
+      "mean_evidence_score": 39.781,
+      "target_level": "L5"
+    },
+    "energy": {
+      "current_level": "L1",
+      "evidence_adapters": [
+        "facility-bms",
+        "sustainability-xue"
+      ],
+      "gaps": [
+        "battery/microgrid fixture",
+        "energy source attribution",
+        "price signal adapter"
+      ],
+      "level_gap": 3,
+      "mean_evidence_score": 67.183,
+      "target_level": "L4"
+    },
+    "facility": {
+      "current_level": "L1",
+      "evidence_adapters": [
+        "facility-bms",
+        "terraform-plan"
+      ],
+      "gaps": [
+        "BMS point-map fixture",
+        "DCIM import",
+        "facility authority gate"
+      ],
+      "level_gap": 4,
+      "mean_evidence_score": 73.572,
+      "target_level": "L5"
+    },
+    "finance": {
+      "current_level": "L1",
+      "evidence_adapters": [
+        "market-exchange",
+        "sustainability-xue"
+      ],
+      "gaps": [
+        "billing adapter",
+        "cost allocation model",
+        "procurement evidence"
+      ],
+      "level_gap": 3,
+      "mean_evidence_score": 65.278,
+      "target_level": "L4"
+    },
+    "market": {
+      "current_level": "L1",
+      "evidence_adapters": [
+        "market-exchange"
+      ],
+      "gaps": [
+        "BC score fixture",
+        "counterparty policy",
+        "settlement simulator"
+      ],
+      "level_gap": 3,
+      "mean_evidence_score": 61.667,
+      "target_level": "L4"
+    },
+    "network": {
+      "current_level": "L1",
+      "evidence_adapters": [
+        "otel-core",
+        "redfish-hardware",
+        "terraform-plan"
+      ],
+      "gaps": [
+        "curvature scorer",
+        "flow telemetry fixture",
+        "network rollback model"
+      ],
+      "level_gap": 4,
+      "mean_evidence_score": 122.54,
+      "target_level": "L5"
+    },
+    "power": {
+      "current_level": "L1",
+      "evidence_adapters": [
+        "facility-bms",
+        "redfish-hardware"
+      ],
+      "gaps": [
+        "UPS/generator adapter",
+        "electrical safety gate",
+        "microgrid simulator"
+      ],
+      "level_gap": 4,
+      "mean_evidence_score": 98.572,
+      "target_level": "L5"
+    },
+    "qso": {
+      "current_level": "L1",
+      "evidence_adapters": [
+        "qso-readiness"
+      ],
+      "gaps": [
+        "policy-gated dissolution fixture",
+        "repair continuity ledger",
+        "sandbox materialization simulator"
+      ],
+      "level_gap": 3,
+      "mean_evidence_score": 17.895,
+      "target_level": "L4"
+    },
+    "security": {
+      "current_level": "L1",
+      "evidence_adapters": [
+        "otel-core",
+        "terraform-plan"
+      ],
+      "gaps": [
+        "IAM adapter",
+        "SIEM adapter",
+        "policy-as-code gate"
+      ],
+      "level_gap": 4,
+      "mean_evidence_score": 117.977,
+      "target_level": "L5"
+    },
+    "storage": {
+      "current_level": "L1",
+      "evidence_adapters": [
+        "otel-core",
+        "redfish-hardware",
+        "terraform-plan"
+      ],
+      "gaps": [
+        "backup evidence adapter",
+        "durability risk model",
+        "storage locality scorer"
+      ],
+      "level_gap": 4,
+      "mean_evidence_score": 122.54,
+      "target_level": "L5"
+    },
+    "sustainability": {
+      "current_level": "L1",
+      "evidence_adapters": [
+        "market-exchange",
+        "sustainability-xue"
+      ],
+      "gaps": [
+        "REC evidence model",
+        "auditable retirement fixture",
+        "carbon factor source policy"
+      ],
+      "level_gap": 3,
+      "mean_evidence_score": 65.278,
+      "target_level": "L4"
+    }
+  },
+  "generated_from": [
+    "data/standards_coverage.json",
+    "data/integration_adapters.json",
+    "data/operational_readiness.json",
+    "fixtures/integration_envelopes/*.json"
+  ],
+  "mathematical_authority": "MATH.md",
+  "next_gaps": [
+    "ai_high_density",
+    "compliance",
+    "compute",
+    "cooling",
+    "disaster_recovery",
+    "energy",
+    "facility",
+    "finance",
+    "market",
+    "network",
+    "power",
+    "qso",
+    "security",
+    "storage",
+    "sustainability"
+  ],
+  "standard_domain_coverage": {
+    "ashrae-tc-9-9": [
+      "ai_high_density",
+      "cooling",
+      "energy",
+      "facility"
+    ],
+    "bacnet-modbus-opcua": [
+      "cooling",
+      "energy",
+      "facility",
+      "power"
+    ],
+    "bicsi-002": [
+      "cooling",
+      "facility",
+      "network",
+      "power",
+      "security"
+    ],
+    "dcco-exchange-layer": [
+      "disaster_recovery",
+      "finance",
+      "market",
+      "sustainability"
+    ],
+    "dmtf-redfish": [
+      "compute",
+      "cooling",
+      "network",
+      "power",
+      "storage"
+    ],
+    "green-grid-xue": [
+      "energy",
+      "finance",
+      "sustainability"
+    ],
+    "iso-iec-22237": [
+      "cooling",
+      "energy",
+      "facility",
+      "power",
+      "security"
+    ],
+    "kubernetes-api": [
+      "ai_high_density",
+      "compute",
+      "network",
+      "security",
+      "storage"
+    ],
+    "opentelemetry": [
+      "ai_high_density",
+      "compute",
+      "network",
+      "security",
+      "storage"
+    ],
+    "qso-fabric-extension": [
+      "ai_high_density",
+      "disaster_recovery",
+      "qso"
+    ],
+    "terraform-opentofu-plan-json": [
+      "compliance",
+      "compute",
+      "facility",
+      "network",
+      "security",
+      "storage"
+    ],
+    "uptime-tier": [
+      "cooling",
+      "disaster_recovery",
+      "facility",
+      "power"
+    ]
+  },
+  "summary": {
+    "adapter_count": 7,
+    "covered_domain_count": 15,
+    "domains_at_target": 0,
+    "domains_below_target": 15,
+    "readiness_claim": "in_progress",
+    "required_domain_count": 15,
+    "standard_count": 12
+  },
+  "version": "0.1"
+}
