@@ -7,14 +7,15 @@ Status: Foundational Specification
 
 This document defines the mathematical framework used throughout the Data Center Coherence Operator (DCCO).
 
-All scoring, optimization, simulation, orchestration, recommendation, planning, comparative analysis, dashboarding, and agent decision-making systems must derive from the principles defined here.
+All scoring, optimization, simulation, orchestration, recommendation, planning, comparative analysis, dashboarding, Terraform planning, agent decision-making, exchange settlement, and future QSO-compatible execution systems must derive from the principles defined here.
 
-The objective of DCCO is not simply resource utilization.
+DCCO does not exist to maximize raw utilization.
 
-The objective is:
+DCCO exists to:
 
 ```text
-Maximize coherent useful work while minimizing distortion, bottlenecks, uncertainty, and operational cost.
+Maximize coherent useful work while minimizing distortion, bottlenecks,
+uncertainty, and operational cost.
 ```
 
 ## Fundamental Principle
@@ -47,13 +48,15 @@ Each region has local observations:
 s_i in F(U_i)
 ```
 
-Examples include rack state, cluster state, storage state, cooling state, and network state.
+Examples include rack state, cluster state, storage state, cooling state, network state, application state, Terraform state, and market settlement state.
 
 The complete system is represented by the operational sheaf:
 
 ```text
 F
 ```
+
+DCCO measures whether local sections agree strongly enough to support global action.
 
 ## Global Coherence
 
@@ -88,7 +91,7 @@ Pi
 
 as useful work generated.
 
-Examples include completed jobs, tokens trained, simulations completed, storage transactions, and business outcomes.
+Examples include completed jobs, tokens trained, simulations completed, storage transactions, successful failovers, customer outcomes, verified carbon-credit retirements, and approved infrastructure plans.
 
 Normalized form:
 
@@ -108,7 +111,7 @@ R_nabla
 
 as operational curvature.
 
-Curvature arises from latency, protocol translation, serialization, excessive routing, and cross-zone communication.
+Curvature arises from latency, protocol translation, serialization, excessive routing, cross-zone communication, coordination overhead, and workflow impedance.
 
 Approximation:
 
@@ -134,7 +137,7 @@ Operationally:
 B = sum_k beta_k
 ```
 
-Examples include single points of failure, disconnected services, orphaned resources, and isolated storage islands.
+Examples include single points of failure, disconnected services, orphaned resources, isolated storage islands, unmodeled dependencies, and approval dead ends.
 
 Lower values indicate greater resilience.
 
@@ -146,12 +149,12 @@ Define:
 epsilon
 ```
 
-Noise includes packet loss, retries, hardware faults, thermal instability, and sensor uncertainty.
+Noise includes packet loss, retries, hardware faults, thermal instability, sensor uncertainty, telemetry gaps, stale inventory, and model uncertainty.
 
 Approximation:
 
 ```text
-epsilon = f(error_rate, retry_rate, fault_frequency)
+epsilon = f(error_rate, retry_rate, fault_frequency, telemetry_uncertainty)
 ```
 
 ## Cost
@@ -176,6 +179,8 @@ Where:
 - `D` = data movement
 - `P` = personnel and operational expenditure
 
+All cost terms must be normalized before comparison.
+
 ## Core Coherence Functional
 
 The primary DCCO equation is:
@@ -185,6 +190,12 @@ Q = (Gamma + Pi) / (R_nabla + B + epsilon + C)
 ```
 
 Higher values are better.
+
+Implementations must guard against zero denominators by applying a documented positive floor:
+
+```text
+denominator = max(R_nabla + B + epsilon + C, denominator_floor)
+```
 
 ## Enterprise Score
 
@@ -203,6 +214,8 @@ EnterpriseScore =
 (w_R*R_nabla + w_B*B + w_epsilon*epsilon + w_C*C)
 ```
 
+Weights must be explicit, versioned, and auditable.
+
 ## Optimization Objective
 
 All agents seek:
@@ -218,6 +231,8 @@ max(Gamma + Pi)
 min(R_nabla + B + epsilon + C)
 ```
 
+No subsystem may optimize a local metric at the expense of global coherence.
+
 ## Change Evaluation
 
 For any proposed modification:
@@ -232,6 +247,8 @@ Changes are favorable when:
 DeltaDCCO > 0
 ```
 
+Production-affecting changes also require policy approval, sandbox validation, rollback path, audit evidence, secret isolation, and blast-radius control.
+
 ## Risk Functional
 
 Define:
@@ -242,6 +259,18 @@ Risk = lambda_1*B + lambda_2*epsilon + lambda_3*BlastRadius
 
 Higher risk lowers deployment priority.
 
+Extended form:
+
+```text
+Risk =
+lambda_1*B
++ lambda_2*epsilon
++ lambda_3*BlastRadius
++ lambda_4*SecurityExposure
++ lambda_5*ComplianceExposure
++ lambda_6*Irreversibility
+```
+
 ## Terraform Planning Objective
 
 For infrastructure plans:
@@ -250,7 +279,7 @@ For infrastructure plans:
 PlanScore = DeltaDCCO - Risk - MigrationCost
 ```
 
-Plans with maximal `PlanScore` are preferred.
+Plans with maximal `PlanScore` are preferred, but only among plans that satisfy policy and approval gates.
 
 ## Thermal Coherence
 
@@ -321,6 +350,13 @@ Quantum integration is favorable when:
 HybridQuantumClassicalCoherence > 1
 ```
 
+Hybrid execution must also satisfy:
+
+```text
+DeltaDCCO > 0
+Risk <= approved_risk_budget
+```
+
 ## Agent Utility Function
 
 Every autonomous agent maximizes:
@@ -341,6 +377,12 @@ Comparison = DCCO_A - DCCO_B
 
 Positive values favor `A`. Negative values favor `B`.
 
+Comparisons must report the driver terms:
+
+```text
+DeltaGamma, DeltaPi, DeltaR_nabla, DeltaB, DeltaEpsilon, DeltaC, DeltaRisk
+```
+
 ## Learning Objective
 
 Learning systems seek:
@@ -357,9 +399,11 @@ Subject to:
 DeltaDCCO > 0
 ```
 
+Learning systems must not convert uncertainty into false confidence. Model outputs must carry confidence, data lineage, and validation evidence.
+
 ## Optional Economic Coherence Extension
 
-Economic coherence represents trust, settlement efficiency, market liquidity, and resource exchange effectiveness.
+Economic coherence represents trust, settlement efficiency, market liquidity, auditability, and resource exchange effectiveness.
 
 Extend the core score:
 
@@ -371,7 +415,35 @@ Where:
 
 - `Xi` = economic coherence
 
-Economic coherence may include carbon-credit trading, energy-credit trading, compute-capacity trading, cooling-capacity exchanges, disaster-recovery capacity reservations, renewable-energy certificates, inter-data-center resource leasing, and AI compute marketplace settlement.
+Economic coherence may include carbon-credit trading, energy-credit trading, compute-capacity trading, cooling-capacity exchanges, disaster-recovery capacity reservations, renewable-energy certificates, inter-data-center resource leasing, AI compute marketplace settlement, SLA crediting, and verified retirement of environmental instruments.
+
+Economic coherence must not be added unless it improves global DCCO:
+
+```text
+DeltaDCCO_with_Xi > DeltaDCCO_without_Xi
+```
+
+## DCCO Exchange Layer
+
+The DCCO Exchange Layer is optional. It provides auditable settlement only when multiple organizations need a shared market and do not fully trust each other.
+
+Candidate exchange assets:
+
+| Symbol | Meaning |
+| --- | --- |
+| `DCC` | Data Center Credit utility settlement token |
+| `CCC` | Carbon Credit Certificate |
+| `RCC` | Renewable Capacity Certificate |
+| `CPU` | Compute Unit |
+| `GPU` | Accelerator Unit |
+| `NCU` | Network Capacity Unit |
+| `SCU` | Storage Capacity Unit |
+| `DRU` | Disaster Recovery Unit |
+| `ECU` | Energy Capacity Unit |
+| `CCU` | Cooling Capacity Unit |
+| `SLA` | Service-Level Credit Unit |
+
+`DCC` is a utility settlement token, not a speculative asset. It exists only to improve settlement, reservation, accounting, and reconciliation.
 
 ## Blockchain Justification Rule
 
@@ -398,6 +470,32 @@ Recommended architecture, when justified:
 - Permissioned consortium chain
 - Participants: data centers, utilities, carbon registries, cloud providers, customers, auditors
 - Candidate implementations: Hyperledger Besu, Hyperledger Fabric, Tendermint-based chain, Substrate-based chain
+
+Blockchain is not recommended for internal scheduling, telemetry ingestion, Terraform execution, simulator loops, or low-latency optimization.
+
+## Smart Contract Families
+
+When `BC > 1`, smart contracts may support:
+
+- carbon credit generation, verification, transfer, and retirement
+- capacity leases for compute, accelerator, network, storage, energy, and cooling
+- disaster-recovery reservation and failover rights
+- renewable energy certificate exchange
+- SLA crediting, penalties, and reconciliation
+- audit hash anchoring for approved settlement events
+
+Every smart contract must preserve:
+
+- asset identity
+- owner
+- issuer
+- verifier
+- quantity
+- expiration
+- settlement terms
+- evidence hash
+- source event reference
+- retirement or release state
 
 ## QSO Fabric Extension
 
@@ -437,6 +535,41 @@ Need * Coherence <= Cost + Risk
 
 The operator must support classical execution, quantum execution, hybrid classical-quantum execution, agentic execution, temporary program generation, reversible deployment, evidence-preserving dissolution, and repair-aware continuity.
 
+## QSO Materialization Workflow
+
+Future QSO-compatible operators follow this workflow:
+
+```text
+observe need
+-> infer missing capability
+-> synthesize candidate program
+-> simulate program
+-> score coherence gain
+-> generate Terraform/Kubernetes/runtime plan
+-> require approval
+-> deploy
+-> verify
+-> preserve evidence
+-> dissolve when no longer useful
+```
+
+No self-materializing program may deploy into production without human approval, policy validation, sandbox test, rollback path, audit log, secret isolation, and blast-radius control.
+
+## Required Evidence Envelope
+
+Every subsystem output must preserve:
+
+- state
+- evidence
+- provenance
+- coherence score
+- risk score
+- repair path
+- rollback path
+- dissolution path
+
+This applies to agents, Terraform plans, simulator outputs, exchange events, smart contracts, dashboards, and QSO-compatible program sections.
+
 ## Universal Principle
 
 The purpose of the operator is not to maximize hardware.
@@ -455,4 +588,4 @@ while minimizing:
 Distortion + Obstruction + Noise + Cost
 ```
 
-Every subsystem, agent, optimization routine, simulator, Terraform planner, dashboard, report, and recommendation engine must derive from this principle.
+Every subsystem, agent, optimization routine, simulator, Terraform planner, dashboard, report, recommendation engine, exchange contract, and QSO-compatible extension must derive from this principle.

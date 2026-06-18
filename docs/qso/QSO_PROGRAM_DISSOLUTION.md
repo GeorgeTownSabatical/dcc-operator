@@ -13,3 +13,7 @@ Need * Coherence <= Cost + Risk
 ```
 
 When this inequality holds, DCCO should retire the temporary section while preserving evidence, provenance, repair history, and continuity.
+
+## Required Gate
+
+Dissolution must preserve state needed for audit, learning, repair, rollback analysis, and future rematerialization. Deleting operational evidence is not dissolution.

@@ -13,3 +13,7 @@ Need * Coherence > Cost + Risk
 ```
 
 When this inequality holds, DCCO may propose a temporary coherent program section. Production deployment still requires approval.
+
+## Required Gate
+
+Materialization must produce a simulation result, coherence score, risk score, Terraform/Kubernetes/runtime plan, rollback path, dissolution path, and evidence envelope before approval.

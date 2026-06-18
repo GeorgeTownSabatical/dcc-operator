@@ -16,3 +16,5 @@ No self-materializing program may deploy into production without human approval,
 ## Rule
 
 Hybrid execution is favorable only when coherence gain exceeds encoding, decoding, synchronization, risk, and operational cost.
+
+The bridge must support classical execution first, quantum execution only when justified, and hybrid execution only when `HybridQuantumClassicalCoherence > 1` and `DeltaDCCO > 0`.

@@ -10,6 +10,8 @@ No self-materializing program may deploy into production without human approval,
 
 DCCO is the operational substrate. QSO Fabric is the coherence field. Programs are temporary coherent sections.
 
+The extension is future-compatible by design: classical DCCO scoring works now, while QSO Fabric, QSO Field, and hybrid classical-quantum bridges can be added later without redefining the root objective in ../../MATH.md.
+
 ## Process
 
 ```text
@@ -25,3 +27,7 @@ observe need
 -> preserve evidence
 -> dissolve when no longer useful
 ```
+
+## Capability Rule
+
+Programs are not static artifacts. Programs are coherent operational events that may materialize, transform, repair, and dissolve under policy control.

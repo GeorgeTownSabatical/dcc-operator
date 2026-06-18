@@ -13,8 +13,8 @@ The objective is not maximum utilization. The objective is to maximize coherent 
 
 ## Optional Extensions
 
-- Blockchain settlement is optional and justified only when the blockchain score `BC > 1`.
-- QSO Fabric compatibility is a future-facing extension requirement: programs, plans, agents, and infrastructure states may be treated as temporary coherent sections.
+- Blockchain settlement is optional and justified only when the blockchain score `BC > 1`; see [docs/blockchain/README.md](docs/blockchain/README.md).
+- QSO Fabric compatibility is a future-facing extension requirement: programs, plans, agents, and infrastructure states may be treated as temporary coherent sections; see [docs/qso/README.md](docs/qso/README.md).
 
 ## Validation
 
