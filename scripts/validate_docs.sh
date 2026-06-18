@@ -19,12 +19,14 @@ required=(
   data/operational_readiness.json
   data/simulation_scenarios.json
   data/policy_gates.json
+  data/staged_operations.json
   reports/operational_readiness_latest.json
   reports/operational_readiness_latest.md
   reports/simulation_latest.json
   reports/simulation_latest.md
   scripts/validate_operational_manifests.py
   scripts/validate_policy_gates.py
+  scripts/validate_staged_operations.py
   scripts/generate_readiness_report.py
   scripts/generate_simulation_report.py
   docs/blockchain/BLOCKCHAIN_ARCHITECTURE.md

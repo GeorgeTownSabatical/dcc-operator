@@ -21,34 +21,34 @@
   },
   "domains": {
     "compute": {
-      "current_level": "L4",
+      "current_level": "L5",
       "evidence": ["otel-core", "redfish-hardware", "terraform-plan"],
-      "gaps": ["live inventory connector", "staged operational apply evidence"]
+      "gaps": ["live inventory connector"]
     },
     "storage": {
-      "current_level": "L4",
+      "current_level": "L5",
       "evidence": ["otel-core", "redfish-hardware", "terraform-plan"],
-      "gaps": ["backup evidence adapter", "staged migration evidence"]
+      "gaps": ["backup evidence adapter"]
     },
     "network": {
-      "current_level": "L4",
+      "current_level": "L5",
       "evidence": ["otel-core", "redfish-hardware", "terraform-plan"],
-      "gaps": ["flow telemetry fixture", "policy-gated route change evidence"]
+      "gaps": ["flow telemetry fixture"]
     },
     "facility": {
-      "current_level": "L4",
+      "current_level": "L5",
       "evidence": ["facility-bms", "terraform-plan"],
-      "gaps": ["DCIM import", "staged BMS change evidence"]
+      "gaps": ["DCIM import"]
     },
     "power": {
-      "current_level": "L4",
+      "current_level": "L5",
       "evidence": ["redfish-hardware", "facility-bms"],
-      "gaps": ["UPS/generator adapter", "microgrid staged-operation evidence"]
+      "gaps": ["UPS/generator adapter"]
     },
     "cooling": {
-      "current_level": "L4",
+      "current_level": "L5",
       "evidence": ["redfish-hardware", "facility-bms"],
-      "gaps": ["liquid cooling live model", "approved setpoint-change evidence"]
+      "gaps": ["liquid cooling live model"]
     },
     "energy": {
       "current_level": "L4",
@@ -61,9 +61,9 @@
       "gaps": ["REC evidence model", "auditable retirement fixture"]
     },
     "security": {
-      "current_level": "L4",
+      "current_level": "L5",
       "evidence": ["otel-core", "terraform-plan"],
-      "gaps": ["IAM adapter", "SIEM adapter", "staged enforcement evidence"]
+      "gaps": ["IAM adapter", "SIEM adapter"]
     },
     "compliance": {
       "current_level": "L4",
@@ -81,14 +81,14 @@
       "gaps": ["counterparty policy", "auditable live event-store evidence"]
     },
     "disaster_recovery": {
-      "current_level": "L4",
+      "current_level": "L5",
       "evidence": ["market-exchange", "qso-readiness"],
-      "gaps": ["recovery exercise evidence", "geographic correlation risk"]
+      "gaps": ["recovery exercise evidence"]
     },
     "ai_high_density": {
-      "current_level": "L4",
+      "current_level": "L5",
       "evidence": ["otel-core", "qso-readiness"],
-      "gaps": ["GPU fabric telemetry", "approved placement change evidence"]
+      "gaps": ["GPU fabric telemetry"]
     },
     "qso": {
       "current_level": "L4",

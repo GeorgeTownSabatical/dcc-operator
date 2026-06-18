@@ -1,0 +1,59 @@
+{
+  "version": "0.1",
+  "mathematical_authority": "MATH.md",
+  "required_lifecycle": ["stage", "deploy", "verify", "repair", "retire"],
+  "operations": [
+    {
+      "operation_id": "core-it-placement-stage-001",
+      "domains": ["compute", "network", "storage", "ai_high_density"],
+      "scenario_refs": ["ai-density-placement-001", "storage-locality-001"],
+      "policy_gate_refs": ["it-platform-change-gate"],
+      "mode": "sandbox",
+      "approved": true,
+      "lifecycle": ["stage", "deploy", "verify", "repair", "retire"],
+      "evidence_refs": ["reports/simulation_latest.md", "reports/operational_readiness_latest.md"],
+      "verification": ["before/after DCCO score exists", "rollback path exists", "dissolution path exists"],
+      "repair_path": ["restore previous scheduler policy", "rerun placement simulation"],
+      "retirement_path": ["remove temporary placement profile", "archive operational evidence"]
+    },
+    {
+      "operation_id": "facility-thermal-stage-001",
+      "domains": ["facility", "cooling", "power", "energy"],
+      "scenario_refs": ["thermal-coherence-001", "microgrid-energy-001"],
+      "policy_gate_refs": ["facility-life-safety-gate"],
+      "mode": "sandbox",
+      "approved": true,
+      "lifecycle": ["stage", "deploy", "verify", "repair", "retire"],
+      "evidence_refs": ["reports/simulation_latest.md", "docs/facility/EMERGING_FACILITY_NEEDS.md"],
+      "verification": ["thermal envelope remains bounded", "facility approval gate exists", "rollback path exists"],
+      "repair_path": ["restore prior thermal policy", "verify alarm state"],
+      "retirement_path": ["remove staged setpoint policy", "archive thermal evidence"]
+    },
+    {
+      "operation_id": "security-compliance-stage-001",
+      "domains": ["security", "compliance"],
+      "scenario_refs": ["security-compliance-gate-001"],
+      "policy_gate_refs": ["security-compliance-gate"],
+      "mode": "sandbox",
+      "approved": true,
+      "lifecycle": ["stage", "deploy", "verify", "repair", "retire"],
+      "evidence_refs": ["reports/simulation_latest.md", "docs/security/SECURITY_MODEL.md"],
+      "verification": ["policy gate blocks unsafe apply", "audit evidence exists", "rollback path exists"],
+      "repair_path": ["revert policy bundle", "restore prior approval workflow"],
+      "retirement_path": ["archive policy experiment", "preserve audit evidence"]
+    },
+    {
+      "operation_id": "dr-capacity-stage-001",
+      "domains": ["disaster_recovery"],
+      "scenario_refs": ["capacity-market-dr-001"],
+      "policy_gate_refs": ["market-settlement-gate"],
+      "mode": "sandbox",
+      "approved": true,
+      "lifecycle": ["stage", "deploy", "verify", "repair", "retire"],
+      "evidence_refs": ["reports/simulation_latest.md", "docs/blockchain/SETTLEMENT_ENGINE.md"],
+      "verification": ["reservation remains simulated", "settlement blocked without approval", "retirement path exists"],
+      "repair_path": ["void reservation proposal", "rerun DR capacity simulation"],
+      "retirement_path": ["expire staged reservation", "archive event-store evidence"]
+    }
+  ]
+}

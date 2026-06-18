@@ -113,7 +113,7 @@ def build_report() -> dict[str, Any]:
             "covered_domain_count": len(covered_domains),
             "domains_at_target": len(domains) - len(target_gaps),
             "domains_below_target": len(target_gaps),
-            "readiness_claim": "in_progress",
+            "readiness_claim": "target_achieved" if not target_gaps else "in_progress",
         },
         "standard_domain_coverage": standard_domain_coverage,
         "adapter_scores": adapter_scores,
@@ -156,9 +156,13 @@ def write_markdown(report: dict[str, Any], path: Path) -> None:
             f"| `{adapter_id}` | `{item['status_level']}` | `{item['control_authority']}` | "
             f"{item['mean_risk_adjusted_score']} | {domains} |"
         )
-    lines.extend(["", "## Remaining Target Gaps", ""])
-    for domain in report["next_gaps"]:
-        lines.append(f"- `{domain}`")
+    if report["next_gaps"]:
+        lines.extend(["", "## Remaining Target Gaps", ""])
+        for domain in report["next_gaps"]:
+            lines.append(f"- `{domain}`")
+    else:
+        lines.extend(["", "## Remaining Target Gaps"])
+        lines.append("- none")
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 

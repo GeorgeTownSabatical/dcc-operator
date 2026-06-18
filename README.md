@@ -30,6 +30,7 @@ The objective is not maximum utilization. The objective is to maximize coherent 
 - [data/simulation_scenarios.json](data/simulation_scenarios.json) defines replayable before/after DCCO simulations.
 - [reports/simulation_latest.md](reports/simulation_latest.md) is the generated simulation report; `make validate` fails if it drifts from the scenario fixtures.
 - [data/policy_gates.json](data/policy_gates.json) defines approval, sandbox, rollback, dissolution, audit, secret-isolation, and blast-radius controls for governed readiness.
+- [data/staged_operations.json](data/staged_operations.json) defines sandbox staged-operation evidence for domains that claim `L5`.
 
 ## Optional Extensions
 

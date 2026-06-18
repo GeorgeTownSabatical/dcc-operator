@@ -61,6 +61,8 @@ The current repository can promote domains to `L3` only when ../../reports/simul
 
 `L4` requires coverage in ../../data/policy_gates.json and successful validation by ../../scripts/validate_policy_gates.py. `L4` is a governed contract state, not proof of live production execution.
 
+`L5` requires staged operation evidence in ../../data/staged_operations.json and successful validation by ../../scripts/validate_staged_operations.py. In this repository, `L5` means sandbox lifecycle evidence for stage, deploy, verify, repair, and retire. Live production authority remains outside the repo until an operator supplies real credentials, sites, and approvals.
+
 ## Status Functional
 
 Define:
