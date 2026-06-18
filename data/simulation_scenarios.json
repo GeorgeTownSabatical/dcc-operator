@@ -1,0 +1,97 @@
+{
+  "version": "0.1",
+  "mathematical_authority": "MATH.md",
+  "scenarios": [
+    {
+      "scenario_id": "ai-density-placement-001",
+      "name": "Place AI workloads closer to accelerator fabric and telemetry",
+      "domains": ["compute", "network", "storage", "ai_high_density"],
+      "evidence_refs": ["fixtures/integration_envelopes/otel_core.json", "fixtures/integration_envelopes/redfish_hardware.json"],
+      "before": {"Gamma": 0.48, "Pi": 0.52, "R_nabla": 0.32, "B": 0.22, "epsilon": 0.28, "C": 0.36},
+      "after": {"Gamma": 0.62, "Pi": 0.68, "R_nabla": 0.22, "B": 0.18, "epsilon": 0.22, "C": 0.34},
+      "risk": 0.18,
+      "migration_cost": 0.08,
+      "approval_required": true,
+      "rollback_path": ["restore prior workload placement", "retain pre/post scheduling evidence"],
+      "dissolution_path": ["retire temporary placement policy", "preserve accelerator utilization report"]
+    },
+    {
+      "scenario_id": "storage-locality-001",
+      "name": "Move hot reads toward local storage pool",
+      "domains": ["storage", "compute", "network"],
+      "evidence_refs": ["fixtures/integration_envelopes/otel_core.json", "fixtures/integration_envelopes/terraform_plan.json"],
+      "before": {"Gamma": 0.46, "Pi": 0.5, "R_nabla": 0.3, "B": 0.24, "epsilon": 0.26, "C": 0.31},
+      "after": {"Gamma": 0.58, "Pi": 0.61, "R_nabla": 0.2, "B": 0.2, "epsilon": 0.2, "C": 0.3},
+      "risk": 0.16,
+      "migration_cost": 0.07,
+      "approval_required": true,
+      "rollback_path": ["restore prior storage class", "verify data consistency"],
+      "dissolution_path": ["remove temporary migration policy", "retain locality and consistency evidence"]
+    },
+    {
+      "scenario_id": "thermal-coherence-001",
+      "name": "Tune cooling setpoints inside policy envelope",
+      "domains": ["facility", "cooling", "power", "energy"],
+      "evidence_refs": ["fixtures/integration_envelopes/facility_bms.json", "fixtures/integration_envelopes/redfish_hardware.json"],
+      "before": {"Gamma": 0.42, "Pi": 0.44, "R_nabla": 0.24, "B": 0.25, "epsilon": 0.34, "C": 0.42},
+      "after": {"Gamma": 0.55, "Pi": 0.5, "R_nabla": 0.22, "B": 0.23, "epsilon": 0.24, "C": 0.34},
+      "risk": 0.22,
+      "migration_cost": 0.05,
+      "approval_required": true,
+      "rollback_path": ["restore prior setpoints", "verify ASHRAE envelope"],
+      "dissolution_path": ["retire tuning experiment", "preserve thermal and alarm evidence"]
+    },
+    {
+      "scenario_id": "microgrid-energy-001",
+      "name": "Shift noncritical load to battery-backed renewable window",
+      "domains": ["energy", "power", "sustainability", "finance"],
+      "evidence_refs": ["fixtures/integration_envelopes/sustainability_xue.json", "fixtures/integration_envelopes/facility_bms.json"],
+      "before": {"Gamma": 0.44, "Pi": 0.4, "R_nabla": 0.16, "B": 0.2, "epsilon": 0.3, "C": 0.45},
+      "after": {"Gamma": 0.52, "Pi": 0.48, "R_nabla": 0.16, "B": 0.21, "epsilon": 0.24, "C": 0.34},
+      "risk": 0.2,
+      "migration_cost": 0.06,
+      "approval_required": true,
+      "rollback_path": ["return noncritical loads to normal schedule", "verify battery reserve"],
+      "dissolution_path": ["retire renewable-window policy", "preserve meter and carbon evidence"]
+    },
+    {
+      "scenario_id": "security-compliance-gate-001",
+      "name": "Require policy gate before Terraform production apply",
+      "domains": ["security", "compliance", "compute", "network", "storage"],
+      "evidence_refs": ["fixtures/integration_envelopes/terraform_plan.json"],
+      "before": {"Gamma": 0.5, "Pi": 0.5, "R_nabla": 0.2, "B": 0.26, "epsilon": 0.28, "C": 0.25},
+      "after": {"Gamma": 0.64, "Pi": 0.51, "R_nabla": 0.22, "B": 0.18, "epsilon": 0.18, "C": 0.28},
+      "risk": 0.14,
+      "migration_cost": 0.04,
+      "approval_required": true,
+      "rollback_path": ["revert policy bundle", "restore prior approval workflow"],
+      "dissolution_path": ["retire temporary policy experiment", "preserve decision and audit evidence"]
+    },
+    {
+      "scenario_id": "capacity-market-dr-001",
+      "name": "Simulate disaster recovery capacity reservation without blockchain activation",
+      "domains": ["market", "finance", "disaster_recovery", "sustainability"],
+      "evidence_refs": ["fixtures/integration_envelopes/market_exchange.json", "docs/blockchain/SETTLEMENT_ENGINE.md"],
+      "before": {"Gamma": 0.36, "Pi": 0.28, "R_nabla": 0.18, "B": 0.32, "epsilon": 0.3, "C": 0.28},
+      "after": {"Gamma": 0.46, "Pi": 0.42, "R_nabla": 0.2, "B": 0.22, "epsilon": 0.25, "C": 0.3},
+      "risk": 0.24,
+      "migration_cost": 0.05,
+      "approval_required": true,
+      "rollback_path": ["void unapproved reservation proposal", "retain event-store evidence"],
+      "dissolution_path": ["expire simulated reservation", "preserve settlement simulation report"]
+    },
+    {
+      "scenario_id": "qso-sandbox-materialization-001",
+      "name": "Simulate QSO sandbox program materialization and dissolution",
+      "domains": ["qso", "ai_high_density", "disaster_recovery"],
+      "evidence_refs": ["fixtures/integration_envelopes/qso_readiness.json", "docs/qso/QSO_FABRIC_EXTENSION.md"],
+      "before": {"Gamma": 0.34, "Pi": 0.2, "R_nabla": 0.22, "B": 0.28, "epsilon": 0.34, "C": 0.28},
+      "after": {"Gamma": 0.45, "Pi": 0.32, "R_nabla": 0.24, "B": 0.22, "epsilon": 0.28, "C": 0.3},
+      "risk": 0.32,
+      "migration_cost": 0.04,
+      "approval_required": true,
+      "rollback_path": ["discard sandbox materialization", "restore pre-simulation state"],
+      "dissolution_path": ["preserve QSO evidence", "retire temporary coherent section"]
+    }
+  ]
+}

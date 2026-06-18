@@ -27,6 +27,8 @@ The objective is not maximum utilization. The objective is to maximize coherent 
 - [fixtures/integration_envelopes](fixtures/integration_envelopes) contains replayable contract fixtures for representative integrations.
 - [scripts/validate_operational_manifests.py](scripts/validate_operational_manifests.py) validates coverage, references, fixture envelopes, and readiness claims.
 - [reports/operational_readiness_latest.md](reports/operational_readiness_latest.md) is the generated readiness report; `make validate` fails if it drifts from the manifests and fixtures.
+- [data/simulation_scenarios.json](data/simulation_scenarios.json) defines replayable before/after DCCO simulations.
+- [reports/simulation_latest.md](reports/simulation_latest.md) is the generated simulation report; `make validate` fails if it drifts from the scenario fixtures.
 
 ## Optional Extensions
 

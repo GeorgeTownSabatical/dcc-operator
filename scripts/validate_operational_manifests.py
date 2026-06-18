@@ -98,6 +98,7 @@ def validate() -> None:
     standards = load_json("data/standards_coverage.json")
     adapters = load_json("data/integration_adapters.json")
     readiness = load_json("data/operational_readiness.json")
+    simulation_report = load_json("reports/simulation_latest.json")
 
     for doc in (standards, adapters, readiness):
         require(isinstance(doc, dict), "manifest root must be an object")
@@ -154,6 +155,11 @@ def validate() -> None:
         require(item["evidence"], f"{domain} must include evidence adapters")
         require(set(item["evidence"]).issubset(adapter_ids), f"{domain} cites unknown evidence adapter")
         require(item["gaps"], f"{domain} must list known gaps until target is reached")
+        if LEVELS.index(current_level) >= LEVELS.index("L3"):
+            require(
+                domain in simulation_report["covered_domains"],
+                f"{domain} claims L3 without simulation coverage",
+            )
 
     print("operational manifests: ok")
 

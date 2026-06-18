@@ -1,0 +1,241 @@
+{
+  "covered_domains": [
+    "ai_high_density",
+    "compliance",
+    "compute",
+    "cooling",
+    "disaster_recovery",
+    "energy",
+    "facility",
+    "finance",
+    "market",
+    "network",
+    "power",
+    "qso",
+    "security",
+    "storage",
+    "sustainability"
+  ],
+  "generated_from": [
+    "data/simulation_scenarios.json"
+  ],
+  "mathematical_authority": "MATH.md",
+  "scenarios": [
+    {
+      "DeltaDCCO": 0.506709,
+      "PlanScore": 0.246709,
+      "after_Q": 1.354167,
+      "approval_required": true,
+      "before_Q": 0.847458,
+      "dissolution_path": [
+        "retire temporary placement policy",
+        "preserve accelerator utilization report"
+      ],
+      "domains": [
+        "ai_high_density",
+        "compute",
+        "network",
+        "storage"
+      ],
+      "evidence_refs": [
+        "fixtures/integration_envelopes/otel_core.json",
+        "fixtures/integration_envelopes/redfish_hardware.json"
+      ],
+      "favorable": true,
+      "migration_cost": 0.08,
+      "name": "Place AI workloads closer to accelerator fabric and telemetry",
+      "risk": 0.18,
+      "rollback_path": [
+        "restore prior workload placement",
+        "retain pre/post scheduling evidence"
+      ],
+      "scenario_id": "ai-density-placement-001"
+    },
+    {
+      "DeltaDCCO": 0.457357,
+      "PlanScore": 0.227357,
+      "after_Q": 1.322222,
+      "approval_required": true,
+      "before_Q": 0.864865,
+      "dissolution_path": [
+        "remove temporary migration policy",
+        "retain locality and consistency evidence"
+      ],
+      "domains": [
+        "compute",
+        "network",
+        "storage"
+      ],
+      "evidence_refs": [
+        "fixtures/integration_envelopes/otel_core.json",
+        "fixtures/integration_envelopes/terraform_plan.json"
+      ],
+      "favorable": true,
+      "migration_cost": 0.07,
+      "name": "Move hot reads toward local storage pool",
+      "risk": 0.16,
+      "rollback_path": [
+        "restore prior storage class",
+        "verify data consistency"
+      ],
+      "scenario_id": "storage-locality-001"
+    },
+    {
+      "DeltaDCCO": 0.331417,
+      "PlanScore": 0.061417,
+      "after_Q": 1.019417,
+      "approval_required": true,
+      "before_Q": 0.688,
+      "dissolution_path": [
+        "retire tuning experiment",
+        "preserve thermal and alarm evidence"
+      ],
+      "domains": [
+        "cooling",
+        "energy",
+        "facility",
+        "power"
+      ],
+      "evidence_refs": [
+        "fixtures/integration_envelopes/facility_bms.json",
+        "fixtures/integration_envelopes/redfish_hardware.json"
+      ],
+      "favorable": true,
+      "migration_cost": 0.05,
+      "name": "Tune cooling setpoints inside policy envelope",
+      "risk": 0.22,
+      "rollback_path": [
+        "restore prior setpoints",
+        "verify ASHRAE envelope"
+      ],
+      "scenario_id": "thermal-coherence-001"
+    },
+    {
+      "DeltaDCCO": 0.295875,
+      "PlanScore": 0.035875,
+      "after_Q": 1.052632,
+      "approval_required": true,
+      "before_Q": 0.756757,
+      "dissolution_path": [
+        "retire renewable-window policy",
+        "preserve meter and carbon evidence"
+      ],
+      "domains": [
+        "energy",
+        "finance",
+        "power",
+        "sustainability"
+      ],
+      "evidence_refs": [
+        "fixtures/integration_envelopes/sustainability_xue.json",
+        "fixtures/integration_envelopes/facility_bms.json"
+      ],
+      "favorable": true,
+      "migration_cost": 0.06,
+      "name": "Shift noncritical load to battery-backed renewable window",
+      "risk": 0.2,
+      "rollback_path": [
+        "return noncritical loads to normal schedule",
+        "verify battery reserve"
+      ],
+      "scenario_id": "microgrid-energy-001"
+    },
+    {
+      "DeltaDCCO": 0.327108,
+      "PlanScore": 0.147108,
+      "after_Q": 1.337209,
+      "approval_required": true,
+      "before_Q": 1.010101,
+      "dissolution_path": [
+        "retire temporary policy experiment",
+        "preserve decision and audit evidence"
+      ],
+      "domains": [
+        "compliance",
+        "compute",
+        "network",
+        "security",
+        "storage"
+      ],
+      "evidence_refs": [
+        "fixtures/integration_envelopes/terraform_plan.json"
+      ],
+      "favorable": true,
+      "migration_cost": 0.04,
+      "name": "Require policy gate before Terraform production apply",
+      "risk": 0.14,
+      "rollback_path": [
+        "revert policy bundle",
+        "restore prior approval workflow"
+      ],
+      "scenario_id": "security-compliance-gate-001"
+    },
+    {
+      "DeltaDCCO": 0.314624,
+      "PlanScore": 0.024624,
+      "after_Q": 0.907216,
+      "approval_required": true,
+      "before_Q": 0.592593,
+      "dissolution_path": [
+        "expire simulated reservation",
+        "preserve settlement simulation report"
+      ],
+      "domains": [
+        "disaster_recovery",
+        "finance",
+        "market",
+        "sustainability"
+      ],
+      "evidence_refs": [
+        "fixtures/integration_envelopes/market_exchange.json",
+        "docs/blockchain/SETTLEMENT_ENGINE.md"
+      ],
+      "favorable": true,
+      "migration_cost": 0.05,
+      "name": "Simulate disaster recovery capacity reservation without blockchain activation",
+      "risk": 0.24,
+      "rollback_path": [
+        "void unapproved reservation proposal",
+        "retain event-store evidence"
+      ],
+      "scenario_id": "capacity-market-dr-001"
+    },
+    {
+      "DeltaDCCO": 0.258242,
+      "PlanScore": -0.101758,
+      "after_Q": 0.740385,
+      "approval_required": true,
+      "before_Q": 0.482143,
+      "dissolution_path": [
+        "preserve QSO evidence",
+        "retire temporary coherent section"
+      ],
+      "domains": [
+        "ai_high_density",
+        "disaster_recovery",
+        "qso"
+      ],
+      "evidence_refs": [
+        "fixtures/integration_envelopes/qso_readiness.json",
+        "docs/qso/QSO_FABRIC_EXTENSION.md"
+      ],
+      "favorable": false,
+      "migration_cost": 0.04,
+      "name": "Simulate QSO sandbox program materialization and dissolution",
+      "risk": 0.32,
+      "rollback_path": [
+        "discard sandbox materialization",
+        "restore pre-simulation state"
+      ],
+      "scenario_id": "qso-sandbox-materialization-001"
+    }
+  ],
+  "summary": {
+    "approval_required_count": 7,
+    "covered_domain_count": 15,
+    "favorable_scenario_count": 6,
+    "scenario_count": 7,
+    "simulation_claim": "replayable_before_after_estimates"
+  },
+  "version": "0.1"
+}

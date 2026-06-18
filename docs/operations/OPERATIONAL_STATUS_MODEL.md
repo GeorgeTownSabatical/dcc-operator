@@ -57,6 +57,8 @@ Every operational-status claim must include:
 
 The current machine-readable readiness ledger is ../../data/operational_readiness.json. It is intentionally conservative: domains begin at `L1` when they have contract fixtures and must earn higher levels through scoring, simulation, policy gates, and operational evidence.
 
+The current repository can promote domains to `L3` only when ../../reports/simulation_latest.md proves replayable before/after estimates across those domains. `L4` still requires governed policy gates, and `L5` requires staged or operational execution evidence.
+
 ## Status Functional
 
 Define:
