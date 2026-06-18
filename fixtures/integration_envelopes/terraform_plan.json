@@ -1,0 +1,31 @@
+{
+  "adapter_id": "terraform-plan",
+  "domain": "compliance",
+  "source_system": "Terraform/OpenTofu plan JSON",
+  "standard_refs": ["terraform-opentofu-plan-json"],
+  "observed_at": "2026-06-18T00:00:00Z",
+  "state": {
+    "resource_changes": 12,
+    "adds": 4,
+    "updates": 7,
+    "deletes": 1,
+    "policy_result": "requires_approval"
+  },
+  "evidence_refs": ["docs/terraform/TERRAFORM_ORCHESTRATION.md"],
+  "provenance": {
+    "fixture": true,
+    "source": "synthetic contract fixture"
+  },
+  "coherence_terms": {
+    "Gamma": 0.5,
+    "Pi": 0.55,
+    "R_nabla": 0.2,
+    "B": 0.2,
+    "epsilon": 0.2,
+    "C": 0.3
+  },
+  "risk": 0.35,
+  "control_authority": "simulate",
+  "rollback_path": ["generate inverse plan", "restore prior state snapshot"],
+  "dissolution_path": ["retire temporary resources", "preserve plan and apply evidence"]
+}

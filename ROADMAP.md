@@ -17,6 +17,7 @@ Mathematical Authority: See [MATH.md](MATH.md).
 - Add simulator stubs.
 - Implement canonical integration envelope fixtures.
 - Add standards matrix coverage checks.
+- Promote selected domains from `L1` observable to `L2` scored with executable score fixtures.
 
 ## Version 0.3
 
@@ -24,6 +25,7 @@ Mathematical Authority: See [MATH.md](MATH.md).
 - Add policy gates.
 - Add sandbox deployment planner.
 - Add adapter stubs for OpenTelemetry, Redfish, SNMP, BACnet, Modbus, Terraform plan JSON, Kubernetes, and energy-meter data.
+- Promote selected domains from `L2` scored to `L3` simulated with before/after plan fixtures.
 
 ## Version 0.4
 

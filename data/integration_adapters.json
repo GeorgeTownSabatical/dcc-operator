@@ -1,0 +1,83 @@
+{
+  "version": "0.1",
+  "mathematical_authority": "MATH.md",
+  "adapters": [
+    {
+      "adapter_id": "otel-core",
+      "domains": ["compute", "network", "storage", "security", "ai_high_density"],
+      "source_systems": ["OpenTelemetry Collector"],
+      "standard_refs": ["opentelemetry"],
+      "read_permissions": ["metrics", "logs", "traces"],
+      "write_permissions": [],
+      "control_authority": "observe",
+      "fixtures": ["fixtures/integration_envelopes/otel_core.json"],
+      "status_level": "L1"
+    },
+    {
+      "adapter_id": "redfish-hardware",
+      "domains": ["compute", "storage", "network", "power", "cooling"],
+      "source_systems": ["DMTF Redfish"],
+      "standard_refs": ["dmtf-redfish"],
+      "read_permissions": ["inventory", "health", "power", "thermal"],
+      "write_permissions": [],
+      "control_authority": "observe",
+      "fixtures": ["fixtures/integration_envelopes/redfish_hardware.json"],
+      "status_level": "L1"
+    },
+    {
+      "adapter_id": "facility-bms",
+      "domains": ["facility", "power", "cooling", "energy"],
+      "source_systems": ["BACnet", "Modbus", "OPC UA"],
+      "standard_refs": ["bacnet-modbus-opcua", "ashrae-tc-9-9", "iso-iec-22237"],
+      "read_permissions": ["points", "alarms", "metering"],
+      "write_permissions": [],
+      "control_authority": "observe",
+      "fixtures": ["fixtures/integration_envelopes/facility_bms.json"],
+      "status_level": "L1"
+    },
+    {
+      "adapter_id": "sustainability-xue",
+      "domains": ["energy", "sustainability", "finance"],
+      "source_systems": ["energy meters", "water meters", "carbon accounting"],
+      "standard_refs": ["green-grid-xue"],
+      "read_permissions": ["meter readings", "carbon factors", "renewable attributes"],
+      "write_permissions": [],
+      "control_authority": "observe",
+      "fixtures": ["fixtures/integration_envelopes/sustainability_xue.json"],
+      "status_level": "L1"
+    },
+    {
+      "adapter_id": "terraform-plan",
+      "domains": ["compute", "network", "storage", "facility", "security", "compliance"],
+      "source_systems": ["Terraform plan JSON", "OpenTofu plan JSON"],
+      "standard_refs": ["terraform-opentofu-plan-json"],
+      "read_permissions": ["plan json", "state metadata"],
+      "write_permissions": [],
+      "control_authority": "simulate",
+      "fixtures": ["fixtures/integration_envelopes/terraform_plan.json"],
+      "status_level": "L2"
+    },
+    {
+      "adapter_id": "market-exchange",
+      "domains": ["market", "finance", "sustainability", "disaster_recovery"],
+      "source_systems": ["DCCO append-only event store"],
+      "standard_refs": ["dcco-exchange-layer", "green-grid-xue"],
+      "read_permissions": ["settlement events", "reservation events", "retirement events"],
+      "write_permissions": [],
+      "control_authority": "simulate",
+      "fixtures": ["fixtures/integration_envelopes/market_exchange.json"],
+      "status_level": "L1"
+    },
+    {
+      "adapter_id": "qso-readiness",
+      "domains": ["qso", "ai_high_density", "disaster_recovery"],
+      "source_systems": ["QSO Fabric compatibility manifest"],
+      "standard_refs": ["qso-fabric-extension", "opentelemetry"],
+      "read_permissions": ["coherent need", "repair history", "temporal continuity"],
+      "write_permissions": [],
+      "control_authority": "simulate",
+      "fixtures": ["fixtures/integration_envelopes/qso_readiness.json"],
+      "status_level": "L1"
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://dcc-operator.local/schemas/integration_envelope.schema.json",
+  "title": "DCCO Integration Envelope",
+  "type": "object",
+  "required": [
+    "adapter_id",
+    "domain",
+    "source_system",
+    "standard_refs",
+    "observed_at",
+    "state",
+    "evidence_refs",
+    "provenance",
+    "coherence_terms",
+    "risk",
+    "control_authority",
+    "rollback_path",
+    "dissolution_path"
+  ],
+  "properties": {
+    "adapter_id": { "type": "string", "minLength": 1 },
+    "domain": {
+      "type": "string",
+      "enum": [
+        "compute",
+        "storage",
+        "network",
+        "facility",
+        "power",
+        "cooling",
+        "energy",
+        "sustainability",
+        "security",
+        "compliance",
+        "finance",
+        "market",
+        "disaster_recovery",
+        "ai_high_density",
+        "qso"
+      ]
+    },
+    "source_system": { "type": "string", "minLength": 1 },
+    "standard_refs": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "minItems": 1
+    },
+    "observed_at": { "type": "string", "format": "date-time" },
+    "state": { "type": "object" },
+    "evidence_refs": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "minItems": 1
+    },
+    "provenance": { "type": "object" },
+    "coherence_terms": {
+      "type": "object",
+      "required": ["Gamma", "Pi", "R_nabla", "B", "epsilon", "C"],
+      "properties": {
+        "Gamma": { "type": "number", "minimum": 0 },
+        "Pi": { "type": "number", "minimum": 0 },
+        "R_nabla": { "type": "number", "minimum": 0 },
+        "B": { "type": "number", "minimum": 0 },
+        "epsilon": { "type": "number", "minimum": 0 },
+        "C": { "type": "number", "minimum": 0 }
+      }
+    },
+    "risk": { "type": "number", "minimum": 0 },
+    "control_authority": {
+      "type": "string",
+      "enum": ["observe", "recommend", "simulate", "stage", "approve_required"]
+    },
+    "rollback_path": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "dissolution_path": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    }
+  }
+}

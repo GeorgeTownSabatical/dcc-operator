@@ -1,0 +1,30 @@
+{
+  "adapter_id": "redfish-hardware",
+  "domain": "power",
+  "source_system": "DMTF Redfish",
+  "standard_refs": ["dmtf-redfish"],
+  "observed_at": "2026-06-18T00:00:00Z",
+  "state": {
+    "systems": 4,
+    "power_watts": 3200,
+    "inlet_celsius": 24.1,
+    "health": "OK"
+  },
+  "evidence_refs": ["docs/integrations/INTEGRATION_ARCHITECTURE.md"],
+  "provenance": {
+    "fixture": true,
+    "source": "synthetic contract fixture"
+  },
+  "coherence_terms": {
+    "Gamma": 0.6,
+    "Pi": 0.5,
+    "R_nabla": 0.1,
+    "B": 0.15,
+    "epsilon": 0.2,
+    "C": 0.3
+  },
+  "risk": 0.15,
+  "control_authority": "observe",
+  "rollback_path": ["remove read-only hardware credential"],
+  "dissolution_path": ["stop hardware polling", "retain health event references"]
+}

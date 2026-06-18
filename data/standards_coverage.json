@@ -1,0 +1,119 @@
+{
+  "version": "0.1",
+  "mathematical_authority": "MATH.md",
+  "required_domains": [
+    "compute",
+    "storage",
+    "network",
+    "facility",
+    "power",
+    "cooling",
+    "energy",
+    "sustainability",
+    "security",
+    "compliance",
+    "finance",
+    "market",
+    "disaster_recovery",
+    "ai_high_density",
+    "qso"
+  ],
+  "standards": [
+    {
+      "id": "uptime-tier",
+      "name": "Uptime Institute Tier Classification System",
+      "domains": ["facility", "power", "cooling", "disaster_recovery"],
+      "url": "https://uptimeinstitute.com/tiers",
+      "dcc_terms": ["B", "Risk", "Pi"],
+      "evidence_required": ["topology evidence", "maintenance path evidence", "availability target"]
+    },
+    {
+      "id": "iso-iec-22237",
+      "name": "ISO/IEC 22237 Data centre facilities and infrastructures",
+      "domains": ["facility", "power", "cooling", "energy", "security"],
+      "url": "https://www.iso.org/standard/78550.html",
+      "dcc_terms": ["B", "C", "Risk", "epsilon"],
+      "evidence_required": ["facility classification", "power distribution evidence", "environmental control evidence"]
+    },
+    {
+      "id": "bicsi-002",
+      "name": "ANSI/BICSI 002 Data Center Design and Implementation Best Practices",
+      "domains": ["facility", "network", "power", "cooling", "security"],
+      "url": "https://www.bicsi.org/standards/available-standards-store/single-purchase/ansi-bicsi-002-the-standard-for-data-center-design",
+      "dcc_terms": ["B", "Risk", "C"],
+      "evidence_required": ["design evidence", "implementation evidence", "operations evidence"]
+    },
+    {
+      "id": "ashrae-tc-9-9",
+      "name": "ASHRAE TC 9.9 Mission Critical Facilities, Data Centers, Technology Spaces, and Electronic Equipment",
+      "domains": ["cooling", "facility", "energy", "ai_high_density"],
+      "url": "https://tpc.ashrae.org/",
+      "dcc_terms": ["epsilon", "Risk", "C"],
+      "evidence_required": ["thermal envelope", "humidity envelope", "cooling-mode evidence"]
+    },
+    {
+      "id": "green-grid-xue",
+      "name": "The Green Grid xUE family: PUE, WUE, CUE",
+      "domains": ["energy", "sustainability", "finance"],
+      "url": "https://archive.thegreengrid.org/en/resources/library-and-tools/238-WP",
+      "dcc_terms": ["C", "Xi", "epsilon"],
+      "evidence_required": ["energy meter evidence", "water meter evidence", "carbon accounting evidence"]
+    },
+    {
+      "id": "dmtf-redfish",
+      "name": "DMTF Redfish",
+      "domains": ["compute", "storage", "network", "power", "cooling"],
+      "url": "https://www.dmtf.org/standards/redfish",
+      "dcc_terms": ["Gamma", "epsilon", "Risk"],
+      "evidence_required": ["hardware inventory", "health events", "power and thermal telemetry"]
+    },
+    {
+      "id": "opentelemetry",
+      "name": "OpenTelemetry",
+      "domains": ["compute", "network", "storage", "security", "ai_high_density"],
+      "url": "https://opentelemetry.io/",
+      "dcc_terms": ["Gamma", "Pi", "R_nabla", "epsilon"],
+      "evidence_required": ["metrics", "logs", "traces", "resource attributes"]
+    },
+    {
+      "id": "terraform-opentofu-plan-json",
+      "name": "Terraform/OpenTofu plan JSON",
+      "domains": ["compute", "network", "storage", "facility", "security", "compliance"],
+      "url": "https://developer.hashicorp.com/terraform/internals/json-format",
+      "dcc_terms": ["DeltaDCCO", "Risk", "C"],
+      "evidence_required": ["plan json", "policy result", "rollback plan"]
+    },
+    {
+      "id": "kubernetes-api",
+      "name": "Kubernetes API",
+      "domains": ["compute", "storage", "network", "security", "ai_high_density"],
+      "url": "https://kubernetes.io/docs/reference/using-api/",
+      "dcc_terms": ["Gamma", "Pi", "R_nabla", "Risk"],
+      "evidence_required": ["workload inventory", "placement evidence", "policy evidence"]
+    },
+    {
+      "id": "bacnet-modbus-opcua",
+      "name": "BACnet, Modbus, and OPC UA facility telemetry",
+      "domains": ["facility", "power", "cooling", "energy"],
+      "url": "docs/integrations/INTEGRATION_ARCHITECTURE.md",
+      "dcc_terms": ["Gamma", "epsilon", "Risk", "C"],
+      "evidence_required": ["point map", "read/write authority", "alarm evidence"]
+    },
+    {
+      "id": "qso-fabric-extension",
+      "name": "DCCO QSO Fabric Extension Contract",
+      "domains": ["qso", "ai_high_density", "disaster_recovery"],
+      "url": "docs/qso/QSO_FABRIC_EXTENSION.md",
+      "dcc_terms": ["Gamma", "Pi", "Risk", "epsilon"],
+      "evidence_required": ["materialization policy", "repair history", "dissolution evidence"]
+    },
+    {
+      "id": "dcco-exchange-layer",
+      "name": "DCCO Exchange Layer Contract",
+      "domains": ["market", "finance", "sustainability", "disaster_recovery"],
+      "url": "docs/blockchain/SETTLEMENT_ENGINE.md",
+      "dcc_terms": ["Xi", "Risk", "C", "DeltaDCCO"],
+      "evidence_required": ["BC score", "settlement event", "reservation evidence", "retirement evidence"]
+    }
+  ]
+}

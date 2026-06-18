@@ -1,0 +1,30 @@
+{
+  "adapter_id": "qso-readiness",
+  "domain": "qso",
+  "source_system": "QSO Fabric compatibility manifest",
+  "standard_refs": ["qso-fabric-extension", "opentelemetry"],
+  "observed_at": "2026-06-18T00:00:00Z",
+  "state": {
+    "materialization_mode": "sandbox_only",
+    "repair_history": true,
+    "temporal_continuity": true,
+    "production_deploy": false
+  },
+  "evidence_refs": ["docs/qso/QSO_FABRIC_EXTENSION.md"],
+  "provenance": {
+    "fixture": true,
+    "source": "synthetic contract fixture"
+  },
+  "coherence_terms": {
+    "Gamma": 0.35,
+    "Pi": 0.2,
+    "R_nabla": 0.2,
+    "B": 0.2,
+    "epsilon": 0.3,
+    "C": 0.25
+  },
+  "risk": 0.4,
+  "control_authority": "simulate",
+  "rollback_path": ["discard sandbox materialization"],
+  "dissolution_path": ["preserve QSO evidence", "retire temporary coherent section"]
+}

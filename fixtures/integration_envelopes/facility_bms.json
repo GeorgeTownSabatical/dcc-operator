@@ -1,0 +1,30 @@
+{
+  "adapter_id": "facility-bms",
+  "domain": "cooling",
+  "source_system": "BACnet/Modbus/OPC UA gateway",
+  "standard_refs": ["bacnet-modbus-opcua", "ashrae-tc-9-9", "iso-iec-22237"],
+  "observed_at": "2026-06-18T00:00:00Z",
+  "state": {
+    "supply_air_celsius": 18.5,
+    "return_air_celsius": 29.7,
+    "chw_supply_celsius": 7.1,
+    "active_alarms": 0
+  },
+  "evidence_refs": ["docs/facility/EMERGING_FACILITY_NEEDS.md"],
+  "provenance": {
+    "fixture": true,
+    "source": "synthetic contract fixture"
+  },
+  "coherence_terms": {
+    "Gamma": 0.5,
+    "Pi": 0.45,
+    "R_nabla": 0.25,
+    "B": 0.2,
+    "epsilon": 0.25,
+    "C": 0.35
+  },
+  "risk": 0.25,
+  "control_authority": "observe",
+  "rollback_path": ["disable BMS read adapter"],
+  "dissolution_path": ["stop facility polling", "preserve point-map and alarm evidence"]
+}

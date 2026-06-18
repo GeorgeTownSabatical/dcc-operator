@@ -1,0 +1,29 @@
+{
+  "adapter_id": "otel-core",
+  "domain": "compute",
+  "source_system": "OpenTelemetry Collector",
+  "standard_refs": ["opentelemetry"],
+  "observed_at": "2026-06-18T00:00:00Z",
+  "state": {
+    "metrics": ["cpu.utilization", "process.runtime.memory", "http.server.duration"],
+    "logs": true,
+    "traces": true
+  },
+  "evidence_refs": ["docs/integrations/INTEGRATION_ARCHITECTURE.md"],
+  "provenance": {
+    "fixture": true,
+    "source": "synthetic contract fixture"
+  },
+  "coherence_terms": {
+    "Gamma": 0.55,
+    "Pi": 0.6,
+    "R_nabla": 0.2,
+    "B": 0.1,
+    "epsilon": 0.25,
+    "C": 0.15
+  },
+  "risk": 0.1,
+  "control_authority": "observe",
+  "rollback_path": ["disable collector pipeline"],
+  "dissolution_path": ["stop fixture ingestion", "preserve exported event evidence"]
+}

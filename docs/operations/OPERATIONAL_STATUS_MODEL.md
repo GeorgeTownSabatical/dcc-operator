@@ -55,6 +55,8 @@ Every operational-status claim must include:
 - validation command output
 - known gaps
 
+The current machine-readable readiness ledger is ../../data/operational_readiness.json. It is intentionally conservative: domains begin at `L1` when they have contract fixtures and must earn higher levels through scoring, simulation, policy gates, and operational evidence.
+
 ## Status Functional
 
 Define:
@@ -92,3 +94,11 @@ The operator may call itself full-spectrum only when:
 - all simulations are replayable
 - all rollback and dissolution paths are present
 - unresolved gaps are visible in the roadmap
+
+## Validation Command
+
+```bash
+make validate
+```
+
+This command runs the document, math-reference, agent-contract, and operational-manifest validators. Operational-manifest validation proves required domains, standards references, adapter fixtures, readiness evidence, and known gaps are internally consistent.

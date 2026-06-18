@@ -1,0 +1,30 @@
+{
+  "adapter_id": "market-exchange",
+  "domain": "market",
+  "source_system": "DCCO append-only event store",
+  "standard_refs": ["dcco-exchange-layer", "green-grid-xue"],
+  "observed_at": "2026-06-18T00:00:00Z",
+  "state": {
+    "exchange_mode": "event_store",
+    "bc_score": 0.8,
+    "blockchain_enabled": false,
+    "settlement_events": 0
+  },
+  "evidence_refs": ["docs/blockchain/SETTLEMENT_ENGINE.md"],
+  "provenance": {
+    "fixture": true,
+    "source": "synthetic contract fixture"
+  },
+  "coherence_terms": {
+    "Gamma": 0.4,
+    "Pi": 0.25,
+    "R_nabla": 0.15,
+    "B": 0.15,
+    "epsilon": 0.25,
+    "C": 0.2
+  },
+  "risk": 0.25,
+  "control_authority": "simulate",
+  "rollback_path": ["void unapproved reservation proposal"],
+  "dissolution_path": ["retire simulated market section", "preserve settlement evidence"]
+}

@@ -13,6 +13,11 @@ required=(
   docs/integrations/INTEGRATION_ARCHITECTURE.md
   docs/operations/OPERATIONAL_STATUS_MODEL.md
   docs/facility/EMERGING_FACILITY_NEEDS.md
+  schemas/integration_envelope.schema.json
+  data/standards_coverage.json
+  data/integration_adapters.json
+  data/operational_readiness.json
+  scripts/validate_operational_manifests.py
   docs/blockchain/BLOCKCHAIN_ARCHITECTURE.md
   docs/blockchain/TOKENOMICS.md
   docs/blockchain/SMART_CONTRACT_MODEL.md

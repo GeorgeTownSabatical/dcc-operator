@@ -1,0 +1,30 @@
+{
+  "adapter_id": "sustainability-xue",
+  "domain": "sustainability",
+  "source_system": "energy and water meters",
+  "standard_refs": ["green-grid-xue"],
+  "observed_at": "2026-06-18T00:00:00Z",
+  "state": {
+    "pue": 1.28,
+    "wue_l_per_kwh": 0.35,
+    "cue_kgco2e_per_kwh": 0.18,
+    "renewable_share": 0.42
+  },
+  "evidence_refs": ["docs/standards/INDUSTRY_STANDARDS_MATRIX.md"],
+  "provenance": {
+    "fixture": true,
+    "source": "synthetic contract fixture"
+  },
+  "coherence_terms": {
+    "Gamma": 0.45,
+    "Pi": 0.35,
+    "R_nabla": 0.1,
+    "B": 0.1,
+    "epsilon": 0.3,
+    "C": 0.4
+  },
+  "risk": 0.2,
+  "control_authority": "observe",
+  "rollback_path": ["remove meter import job"],
+  "dissolution_path": ["stop xUE calculations", "retain metering evidence references"]
+}

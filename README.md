@@ -18,6 +18,15 @@ The objective is not maximum utilization. The objective is to maximize coherent 
 - [docs/operations/OPERATIONAL_STATUS_MODEL.md](docs/operations/OPERATIONAL_STATUS_MODEL.md) defines what full-spectrum operational status means.
 - [docs/facility/EMERGING_FACILITY_NEEDS.md](docs/facility/EMERGING_FACILITY_NEEDS.md) covers high-density, liquid-cooled, microgrid, heat-reuse, edge, and future hybrid facilities.
 
+## Machine-Readable Evidence
+
+- [data/standards_coverage.json](data/standards_coverage.json) maps required domains to external standards and DCCO extension contracts.
+- [data/integration_adapters.json](data/integration_adapters.json) defines planned adapter coverage, permissions, fixtures, and readiness levels.
+- [data/operational_readiness.json](data/operational_readiness.json) records current and target readiness by domain with explicit gaps.
+- [schemas/integration_envelope.schema.json](schemas/integration_envelope.schema.json) defines the canonical adapter envelope.
+- [fixtures/integration_envelopes](fixtures/integration_envelopes) contains replayable contract fixtures for representative integrations.
+- [scripts/validate_operational_manifests.py](scripts/validate_operational_manifests.py) validates coverage, references, fixture envelopes, and readiness claims.
+
 ## Optional Extensions
 
 - Blockchain settlement is optional and justified only when the blockchain score `BC > 1`; see [docs/blockchain/README.md](docs/blockchain/README.md).

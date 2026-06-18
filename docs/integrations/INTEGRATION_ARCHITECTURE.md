@@ -50,6 +50,8 @@ Every adapter emits:
 }
 ```
 
+The machine-readable schema for this envelope is ../../schemas/integration_envelope.schema.json. Representative fixtures live under ../../fixtures/integration_envelopes and are validated by ../../scripts/validate_operational_manifests.py.
+
 ## Adapter Requirements
 
 Adapters must:
@@ -71,6 +73,16 @@ Adapters must:
 5. Security and compliance: IAM, SIEM, policy-as-code, audit evidence.
 6. Exchange layer: carbon, energy, capacity, and disaster-recovery settlement when `BC > 1`.
 7. QSO-compatible execution: sandboxed materialization, repair, and dissolution.
+
+## Coverage Manifests
+
+Operational coverage is tracked in:
+
+- ../../data/standards_coverage.json
+- ../../data/integration_adapters.json
+- ../../data/operational_readiness.json
+
+These files are validation inputs, not aspirational prose. A domain cannot advance readiness unless the manifests name evidence adapters, fixtures, gaps, and target levels.
 
 ## Control Boundary
 
