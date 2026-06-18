@@ -1,0 +1,70 @@
+{
+  "version": "0.1",
+  "mathematical_authority": "MATH.md",
+  "required_controls": [
+    "human_approval",
+    "policy_validation",
+    "sandbox_or_stage",
+    "rollback_path",
+    "dissolution_path",
+    "audit_log",
+    "secret_isolation",
+    "blast_radius_control"
+  ],
+  "gates": [
+    {
+      "gate_id": "it-platform-change-gate",
+      "domains": ["compute", "storage", "network", "ai_high_density"],
+      "control_authority": "approve_required",
+      "hard_gate": true,
+      "required_controls": ["human_approval", "policy_validation", "sandbox_or_stage", "rollback_path", "dissolution_path", "audit_log", "secret_isolation", "blast_radius_control"],
+      "evidence_refs": ["reports/simulation_latest.md", "docs/terraform/TERRAFORM_ORCHESTRATION.md"],
+      "failure_mode": "block production apply"
+    },
+    {
+      "gate_id": "facility-life-safety-gate",
+      "domains": ["facility", "power", "cooling", "energy"],
+      "control_authority": "approve_required",
+      "hard_gate": true,
+      "required_controls": ["human_approval", "policy_validation", "sandbox_or_stage", "rollback_path", "dissolution_path", "audit_log", "secret_isolation", "blast_radius_control"],
+      "evidence_refs": ["docs/facility/EMERGING_FACILITY_NEEDS.md", "reports/simulation_latest.md"],
+      "failure_mode": "block facility actuation"
+    },
+    {
+      "gate_id": "security-compliance-gate",
+      "domains": ["security", "compliance"],
+      "control_authority": "approve_required",
+      "hard_gate": true,
+      "required_controls": ["human_approval", "policy_validation", "sandbox_or_stage", "rollback_path", "dissolution_path", "audit_log", "secret_isolation", "blast_radius_control"],
+      "evidence_refs": ["docs/security/SECURITY_MODEL.md", "reports/simulation_latest.md"],
+      "failure_mode": "block unapproved control change"
+    },
+    {
+      "gate_id": "sustainability-finance-gate",
+      "domains": ["sustainability", "finance"],
+      "control_authority": "approve_required",
+      "hard_gate": true,
+      "required_controls": ["human_approval", "policy_validation", "sandbox_or_stage", "rollback_path", "dissolution_path", "audit_log", "secret_isolation", "blast_radius_control"],
+      "evidence_refs": ["docs/standards/INDUSTRY_STANDARDS_MATRIX.md", "reports/operational_readiness_latest.md"],
+      "failure_mode": "block unverified accounting claim"
+    },
+    {
+      "gate_id": "market-settlement-gate",
+      "domains": ["market", "disaster_recovery"],
+      "control_authority": "approve_required",
+      "hard_gate": true,
+      "required_controls": ["human_approval", "policy_validation", "sandbox_or_stage", "rollback_path", "dissolution_path", "audit_log", "secret_isolation", "blast_radius_control"],
+      "evidence_refs": ["docs/blockchain/SETTLEMENT_ENGINE.md", "reports/simulation_latest.md"],
+      "failure_mode": "block unapproved settlement"
+    },
+    {
+      "gate_id": "qso-materialization-gate",
+      "domains": ["qso"],
+      "control_authority": "approve_required",
+      "hard_gate": true,
+      "required_controls": ["human_approval", "policy_validation", "sandbox_or_stage", "rollback_path", "dissolution_path", "audit_log", "secret_isolation", "blast_radius_control"],
+      "evidence_refs": ["docs/qso/QSO_SECURITY_BOUNDARIES.md", "reports/simulation_latest.md"],
+      "failure_mode": "block production materialization"
+    }
+  ]
+}

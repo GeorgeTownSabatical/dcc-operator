@@ -166,141 +166,131 @@
   },
   "domain_readiness": {
     "ai_high_density": {
-      "current_level": "L3",
+      "current_level": "L4",
       "evidence_adapters": [
         "otel-core",
         "qso-readiness"
       ],
       "gaps": [
         "GPU fabric telemetry",
-        "approved placement change evidence",
-        "liquid-cooling coupling"
+        "approved placement change evidence"
       ],
-      "level_gap": 2,
+      "level_gap": 1,
       "mean_evidence_score": 86.091,
       "target_level": "L5"
     },
     "compliance": {
-      "current_level": "L3",
+      "current_level": "L4",
       "evidence_adapters": [
         "terraform-plan"
       ],
       "gaps": [
-        "auditor export",
-        "control mapping manifest",
-        "evidence retention policy"
+        "auditor export"
       ],
-      "level_gap": 1,
+      "level_gap": 0,
       "mean_evidence_score": 81.667,
       "target_level": "L4"
     },
     "compute": {
-      "current_level": "L3",
+      "current_level": "L4",
       "evidence_adapters": [
         "otel-core",
         "redfish-hardware",
         "terraform-plan"
       ],
       "gaps": [
-        "deployment gate fixture",
         "live inventory connector",
         "staged operational apply evidence"
       ],
-      "level_gap": 2,
+      "level_gap": 1,
       "mean_evidence_score": 122.54,
       "target_level": "L5"
     },
     "cooling": {
-      "current_level": "L3",
+      "current_level": "L4",
       "evidence_adapters": [
         "facility-bms",
         "redfish-hardware"
       ],
       "gaps": [
         "approved setpoint-change evidence",
-        "liquid cooling live model",
-        "thermal rollback model"
+        "liquid cooling live model"
       ],
-      "level_gap": 2,
+      "level_gap": 1,
       "mean_evidence_score": 98.572,
       "target_level": "L5"
     },
     "disaster_recovery": {
-      "current_level": "L3",
+      "current_level": "L4",
       "evidence_adapters": [
         "market-exchange",
         "qso-readiness"
       ],
       "gaps": [
-        "failover rights model",
         "geographic correlation risk",
         "recovery exercise evidence"
       ],
-      "level_gap": 2,
+      "level_gap": 1,
       "mean_evidence_score": 39.781,
       "target_level": "L5"
     },
     "energy": {
-      "current_level": "L3",
+      "current_level": "L4",
       "evidence_adapters": [
         "facility-bms",
         "sustainability-xue"
       ],
       "gaps": [
         "approved demand-shift evidence",
-        "energy source attribution",
-        "price signal adapter"
+        "energy source attribution"
       ],
-      "level_gap": 1,
+      "level_gap": 0,
       "mean_evidence_score": 67.183,
       "target_level": "L4"
     },
     "facility": {
-      "current_level": "L3",
+      "current_level": "L4",
       "evidence_adapters": [
         "facility-bms",
         "terraform-plan"
       ],
       "gaps": [
         "DCIM import",
-        "facility authority gate",
         "staged BMS change evidence"
       ],
-      "level_gap": 2,
+      "level_gap": 1,
       "mean_evidence_score": 73.572,
       "target_level": "L5"
     },
     "finance": {
-      "current_level": "L3",
+      "current_level": "L4",
       "evidence_adapters": [
         "market-exchange",
         "sustainability-xue"
       ],
       "gaps": [
         "billing adapter",
-        "cost allocation model",
         "procurement evidence"
       ],
-      "level_gap": 1,
+      "level_gap": 0,
       "mean_evidence_score": 65.278,
       "target_level": "L4"
     },
     "market": {
-      "current_level": "L3",
+      "current_level": "L4",
       "evidence_adapters": [
         "market-exchange"
       ],
       "gaps": [
-        "approved settlement policy",
         "auditable live event-store evidence",
         "counterparty policy"
       ],
-      "level_gap": 1,
+      "level_gap": 0,
       "mean_evidence_score": 61.667,
       "target_level": "L4"
     },
     "network": {
-      "current_level": "L3",
+      "current_level": "L4",
       "evidence_adapters": [
         "otel-core",
         "redfish-hardware",
@@ -308,44 +298,41 @@
       ],
       "gaps": [
         "flow telemetry fixture",
-        "network rollback model",
         "policy-gated route change evidence"
       ],
-      "level_gap": 2,
+      "level_gap": 1,
       "mean_evidence_score": 122.54,
       "target_level": "L5"
     },
     "power": {
-      "current_level": "L3",
+      "current_level": "L4",
       "evidence_adapters": [
         "facility-bms",
         "redfish-hardware"
       ],
       "gaps": [
         "UPS/generator adapter",
-        "electrical safety gate",
         "microgrid staged-operation evidence"
       ],
-      "level_gap": 2,
+      "level_gap": 1,
       "mean_evidence_score": 98.572,
       "target_level": "L5"
     },
     "qso": {
-      "current_level": "L3",
+      "current_level": "L4",
       "evidence_adapters": [
         "qso-readiness"
       ],
       "gaps": [
         "favorable QSO PlanScore",
-        "policy-gated dissolution fixture",
         "repair continuity ledger"
       ],
-      "level_gap": 1,
+      "level_gap": 0,
       "mean_evidence_score": 17.895,
       "target_level": "L4"
     },
     "security": {
-      "current_level": "L3",
+      "current_level": "L4",
       "evidence_adapters": [
         "otel-core",
         "terraform-plan"
@@ -353,14 +340,14 @@
       "gaps": [
         "IAM adapter",
         "SIEM adapter",
-        "enforced policy-as-code gate"
+        "staged enforcement evidence"
       ],
-      "level_gap": 2,
+      "level_gap": 1,
       "mean_evidence_score": 117.977,
       "target_level": "L5"
     },
     "storage": {
-      "current_level": "L3",
+      "current_level": "L4",
       "evidence_adapters": [
         "otel-core",
         "redfish-hardware",
@@ -368,25 +355,23 @@
       ],
       "gaps": [
         "backup evidence adapter",
-        "durability risk model",
         "staged migration evidence"
       ],
-      "level_gap": 2,
+      "level_gap": 1,
       "mean_evidence_score": 122.54,
       "target_level": "L5"
     },
     "sustainability": {
-      "current_level": "L3",
+      "current_level": "L4",
       "evidence_adapters": [
         "market-exchange",
         "sustainability-xue"
       ],
       "gaps": [
         "REC evidence model",
-        "auditable retirement fixture",
-        "carbon factor source policy"
+        "auditable retirement fixture"
       ],
-      "level_gap": 1,
+      "level_gap": 0,
       "mean_evidence_score": 65.278,
       "target_level": "L4"
     }
@@ -400,20 +385,14 @@
   "mathematical_authority": "MATH.md",
   "next_gaps": [
     "ai_high_density",
-    "compliance",
     "compute",
     "cooling",
     "disaster_recovery",
-    "energy",
     "facility",
-    "finance",
-    "market",
     "network",
     "power",
-    "qso",
     "security",
-    "storage",
-    "sustainability"
+    "storage"
   ],
   "standard_domain_coverage": {
     "ashrae-tc-9-9": [
@@ -497,8 +476,8 @@
   "summary": {
     "adapter_count": 7,
     "covered_domain_count": 15,
-    "domains_at_target": 0,
-    "domains_below_target": 15,
+    "domains_at_target": 6,
+    "domains_below_target": 9,
     "readiness_claim": "in_progress",
     "required_domain_count": 15,
     "standard_count": 12

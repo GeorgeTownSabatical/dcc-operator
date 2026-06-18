@@ -59,6 +59,8 @@ The current machine-readable readiness ledger is ../../data/operational_readines
 
 The current repository can promote domains to `L3` only when ../../reports/simulation_latest.md proves replayable before/after estimates across those domains. `L4` still requires governed policy gates, and `L5` requires staged or operational execution evidence.
 
+`L4` requires coverage in ../../data/policy_gates.json and successful validation by ../../scripts/validate_policy_gates.py. `L4` is a governed contract state, not proof of live production execution.
+
 ## Status Functional
 
 Define:

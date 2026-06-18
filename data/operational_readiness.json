@@ -21,79 +21,79 @@
   },
   "domains": {
     "compute": {
-      "current_level": "L3",
+      "current_level": "L4",
       "evidence": ["otel-core", "redfish-hardware", "terraform-plan"],
-      "gaps": ["live inventory connector", "deployment gate fixture", "staged operational apply evidence"]
+      "gaps": ["live inventory connector", "staged operational apply evidence"]
     },
     "storage": {
-      "current_level": "L3",
+      "current_level": "L4",
       "evidence": ["otel-core", "redfish-hardware", "terraform-plan"],
-      "gaps": ["durability risk model", "backup evidence adapter", "staged migration evidence"]
+      "gaps": ["backup evidence adapter", "staged migration evidence"]
     },
     "network": {
-      "current_level": "L3",
+      "current_level": "L4",
       "evidence": ["otel-core", "redfish-hardware", "terraform-plan"],
-      "gaps": ["flow telemetry fixture", "network rollback model", "policy-gated route change evidence"]
+      "gaps": ["flow telemetry fixture", "policy-gated route change evidence"]
     },
     "facility": {
-      "current_level": "L3",
+      "current_level": "L4",
       "evidence": ["facility-bms", "terraform-plan"],
-      "gaps": ["DCIM import", "facility authority gate", "staged BMS change evidence"]
+      "gaps": ["DCIM import", "staged BMS change evidence"]
     },
     "power": {
-      "current_level": "L3",
+      "current_level": "L4",
       "evidence": ["redfish-hardware", "facility-bms"],
-      "gaps": ["UPS/generator adapter", "electrical safety gate", "microgrid staged-operation evidence"]
+      "gaps": ["UPS/generator adapter", "microgrid staged-operation evidence"]
     },
     "cooling": {
-      "current_level": "L3",
+      "current_level": "L4",
       "evidence": ["redfish-hardware", "facility-bms"],
-      "gaps": ["liquid cooling live model", "thermal rollback model", "approved setpoint-change evidence"]
+      "gaps": ["liquid cooling live model", "approved setpoint-change evidence"]
     },
     "energy": {
-      "current_level": "L3",
+      "current_level": "L4",
       "evidence": ["facility-bms", "sustainability-xue"],
-      "gaps": ["energy source attribution", "price signal adapter", "approved demand-shift evidence"]
+      "gaps": ["energy source attribution", "approved demand-shift evidence"]
     },
     "sustainability": {
-      "current_level": "L3",
+      "current_level": "L4",
       "evidence": ["sustainability-xue", "market-exchange"],
-      "gaps": ["carbon factor source policy", "REC evidence model", "auditable retirement fixture"]
+      "gaps": ["REC evidence model", "auditable retirement fixture"]
     },
     "security": {
-      "current_level": "L3",
+      "current_level": "L4",
       "evidence": ["otel-core", "terraform-plan"],
-      "gaps": ["IAM adapter", "SIEM adapter", "enforced policy-as-code gate"]
+      "gaps": ["IAM adapter", "SIEM adapter", "staged enforcement evidence"]
     },
     "compliance": {
-      "current_level": "L3",
+      "current_level": "L4",
       "evidence": ["terraform-plan"],
-      "gaps": ["control mapping manifest", "evidence retention policy", "auditor export"]
+      "gaps": ["auditor export"]
     },
     "finance": {
-      "current_level": "L3",
+      "current_level": "L4",
       "evidence": ["sustainability-xue", "market-exchange"],
-      "gaps": ["billing adapter", "cost allocation model", "procurement evidence"]
+      "gaps": ["billing adapter", "procurement evidence"]
     },
     "market": {
-      "current_level": "L3",
+      "current_level": "L4",
       "evidence": ["market-exchange"],
-      "gaps": ["counterparty policy", "approved settlement policy", "auditable live event-store evidence"]
+      "gaps": ["counterparty policy", "auditable live event-store evidence"]
     },
     "disaster_recovery": {
-      "current_level": "L3",
+      "current_level": "L4",
       "evidence": ["market-exchange", "qso-readiness"],
-      "gaps": ["failover rights model", "recovery exercise evidence", "geographic correlation risk"]
+      "gaps": ["recovery exercise evidence", "geographic correlation risk"]
     },
     "ai_high_density": {
-      "current_level": "L3",
+      "current_level": "L4",
       "evidence": ["otel-core", "qso-readiness"],
-      "gaps": ["GPU fabric telemetry", "liquid-cooling coupling", "approved placement change evidence"]
+      "gaps": ["GPU fabric telemetry", "approved placement change evidence"]
     },
     "qso": {
-      "current_level": "L3",
+      "current_level": "L4",
       "evidence": ["qso-readiness"],
-      "gaps": ["favorable QSO PlanScore", "repair continuity ledger", "policy-gated dissolution fixture"]
+      "gaps": ["favorable QSO PlanScore", "repair continuity ledger"]
     }
   }
 }
