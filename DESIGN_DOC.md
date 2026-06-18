@@ -15,6 +15,15 @@ The control plane coordinates agents, policy gates, orchestration requests, Terr
 
 The data plane ingests telemetry, topology, inventory, performance counters, thermal state, cost signals, event logs, and operator evidence.
 
+## Standards And Integration Plane
+
+DCCO maps external standards, protocols, and facility practices through the standards matrix and integration envelope:
+
+- [docs/standards/INDUSTRY_STANDARDS_MATRIX.md](docs/standards/INDUSTRY_STANDARDS_MATRIX.md)
+- [docs/integrations/INTEGRATION_ARCHITECTURE.md](docs/integrations/INTEGRATION_ARCHITECTURE.md)
+
+Adapters must declare domain, source system, standards references, observed state, evidence, provenance, DCCO score terms, risk, control authority, rollback path, and dissolution path.
+
 ## Coherence Engine
 
 The coherence engine computes `Gamma`, `Pi`, `R_nabla`, `B`, `epsilon`, `C`, `Q`, `DeltaDCCO`, and `Risk` according to [MATH.md](MATH.md).
@@ -63,6 +72,14 @@ Security boundaries include secret isolation, least privilege, policy-as-code, s
 
 DCCO must support dry-run, sandbox, staged, and approved production deployment modes.
 
+## Operational Status Model
+
+Operational maturity is defined in [docs/operations/OPERATIONAL_STATUS_MODEL.md](docs/operations/OPERATIONAL_STATUS_MODEL.md). Full-spectrum status requires standards coverage, adapter evidence, scoring, simulation, policy gates, rollback, dissolution, and visible gaps across IT, facility, power, cooling, sustainability, security, finance, market, disaster-recovery, AI/high-density, and QSO-compatible domains.
+
+## Emerging Facility Model
+
+Emerging facility needs are defined in [docs/facility/EMERGING_FACILITY_NEEDS.md](docs/facility/EMERGING_FACILITY_NEEDS.md). New capabilities must enter through observe, normalize, score, simulate, sandbox, approve, stage, verify, operate, repair, and dissolve.
+
 ## Failure Modes
 
 - incoherent telemetry
@@ -72,3 +89,6 @@ DCCO must support dry-run, sandbox, staged, and approved production deployment m
 - unsafe agent proposal
 - blockchain overhead exceeding benefit
 - QSO materialization without policy gate
+- standards mapping without evidence
+- adapter write authority without approval gate
+- emerging facility actuation without simulation

@@ -9,6 +9,10 @@ required=(
   COHERENCE_SCORE_MODEL.md
   OPERATOR_CHARTER.md
   ROADMAP.md
+  docs/standards/INDUSTRY_STANDARDS_MATRIX.md
+  docs/integrations/INTEGRATION_ARCHITECTURE.md
+  docs/operations/OPERATIONAL_STATUS_MODEL.md
+  docs/facility/EMERGING_FACILITY_NEEDS.md
   docs/blockchain/BLOCKCHAIN_ARCHITECTURE.md
   docs/blockchain/TOKENOMICS.md
   docs/blockchain/SMART_CONTRACT_MODEL.md

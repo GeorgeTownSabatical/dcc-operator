@@ -11,6 +11,13 @@ The objective is not maximum utilization. The objective is to maximize coherent 
 - [OPERATOR_CHARTER.md](OPERATOR_CHARTER.md) is the mission, boundary, and safety contract.
 - [DESIGN_DOC.md](DESIGN_DOC.md) describes the operator architecture.
 
+## Operational Scope
+
+- [docs/standards/INDUSTRY_STANDARDS_MATRIX.md](docs/standards/INDUSTRY_STANDARDS_MATRIX.md) maps data-center and facility domains to standards, evidence, and DCCO obligations.
+- [docs/integrations/INTEGRATION_ARCHITECTURE.md](docs/integrations/INTEGRATION_ARCHITECTURE.md) defines the broad-spectrum adapter envelope for IT, facilities, energy, sustainability, security, market, and QSO systems.
+- [docs/operations/OPERATIONAL_STATUS_MODEL.md](docs/operations/OPERATIONAL_STATUS_MODEL.md) defines what full-spectrum operational status means.
+- [docs/facility/EMERGING_FACILITY_NEEDS.md](docs/facility/EMERGING_FACILITY_NEEDS.md) covers high-density, liquid-cooled, microgrid, heat-reuse, edge, and future hybrid facilities.
+
 ## Optional Extensions
 
 - Blockchain settlement is optional and justified only when the blockchain score `BC > 1`; see [docs/blockchain/README.md](docs/blockchain/README.md).
